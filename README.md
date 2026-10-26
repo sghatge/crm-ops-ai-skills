@@ -6,6 +6,52 @@ Ten Claude Agent Skills that codify how a senior Marketing Ops team runs Adobe C
 
 > **The AI never invents a campaign ID, date, count, owner or approval.** Every finding is labelled FACT / HYPOTHESIS / ASSUMPTION / UNKNOWN and traced to its source. Missing evidence is reported as missing.
 
+## ⏱ ~16 hours back per campaign manager, every week (estimated)
+
+| Task | Manual | With skills | Volume / week | Saved / week |
+|---|---:|---:|---:|---:|
+| Pre-launch QA (per campaign) | 90 min | 30 min | 6 | **6.0 h** |
+| Incident troubleshooting | 120 min | 45 min | 2 | **2.5 h** |
+| Performance report + stakeholder emails | 120 min | 20 min | 3 | **5.0 h** |
+| Thread triage / who-owes-what | 45 min | 10 min | 5 | **2.9 h** |
+| **Weekly total** | | | | **≈ 16 h** |
+| Postmortem (monthly) | 6 h | 2 h | 1 / month | 4 h / month |
+| Workload & capacity case (quarterly) | 3 days | 4 h | 1 / quarter | 20 h / quarter |
+
+**≈ 80 hours a month — about half an FTE — returned to execution.**
+These are estimates for a manager running 6 campaigns a week. Replace the volumes and timings with your own measurements during the pilot (see [docs/INSTALL.md](docs/INSTALL.md)); the arithmetic is in this table so anyone can check it.
+
+## 🔁 How it works
+
+```mermaid
+flowchart LR
+    A[Raw evidence<br/>workflow export · stats · Jira · Teams · logs] --> B{Skill router<br/>disjoint triggers}
+    B --> C[QA / Troubleshoot]
+    B --> D[Report / Analyze]
+    B --> E[Plan / Capacity]
+    C & D & E --> F[Evidence gate<br/>FACT · HYPOTHESIS · ASSUMPTION · UNKNOWN]
+    F --> G[Output<br/>verdict · DOCX · XLSX · email drafts]
+    G --> H[Human approves & sends]
+```
+
+1. **Paste or attach evidence** — no special format needed.
+2. **The right skill fires** on its own, based on what you pasted.
+3. **Every claim passes the evidence gate** — sourced or flagged as missing.
+4. **You get a deliverable**, not a chat: verdict table, report, workbook or draft.
+5. **A human decides and sends.** Nothing goes out automatically.
+
+## 🚀 Implement it in 30 minutes
+
+| Step | Time | Do this |
+|---|---:|---|
+| 1 | 5 min | Clone the repo or download the zip |
+| 2 | 10 min | Fill the `Market Context` block in each skill (markets, ID pattern, escalation path, benchmarks) |
+| 3 | 5 min | Upload the skill folders (Claude.ai) or copy to `~/.claude/skills/` (Claude Code) |
+| 4 | 10 min | Run the three demo prompts in [docs/SHOWCASE.md](docs/SHOWCASE.md) on a real past campaign |
+| Then | 2 weeks | Pilot QA in parallel with your checklist; log minutes saved and issues caught |
+
+See it in action: **[docs/SHOWCASE.md](docs/SHOWCASE.md)** — real prompts with the output you get back.
+
 ---
 
 ## Why this exists
@@ -80,6 +126,7 @@ skills/
   <skill-name>/SKILL.md
 docs/
   INSTALL.md
+  SHOWCASE.md
 CONTRIBUTING.md
 LICENSE
 ```
