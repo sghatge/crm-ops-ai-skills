@@ -1,3 +1,15 @@
+<div align="center">
+
+<img src="https://raw.githubusercontent.com/sghatge/sghatge/main/assets/portfolio/project-banner.svg" width="100%" alt="Sangram Ghatge engineering portfolio banner">
+
+**INDEPENDENT ENGINEERING PORTFOLIO · CRM OPS AI SKILLS**
+
+[GitHub Profile](https://github.com/sghatge) · [Portfolio](https://sghatge.github.io/adobe-campaign-v8-governance/)
+
+</div>
+
+---
+
 # CRM Ops AI Skills
 
 **An evidence-first AI operating layer for multi-market CRM & Marketing Operations teams.**
